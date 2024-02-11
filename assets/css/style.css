@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "menu"
+    "nav"
+    "main"
+    "footer";
+  grid-template-columns: auto;
+}
+h3 {
+  color: white;
+  size: 1em;
+  font-weight: inherit;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+h2 {
+  color: black;
+  size: 16px;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.custom-select select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none; /* Oculta la flecha de selección predeterminada */
+  background-color: #fff;
+  cursor: pointer;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: white;
+}
+button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+nav {
+  grid-area: nav;
+  background-color: black;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+#menu {
+  grid-area: menu;
+  background-color: rgb(89, 103, 103);
+  padding: 20px;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 5px;
+  color: white;
+}
+ul {
+  list-style-type: none;
+  gap: 10px;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  height: calc(100vh - 336px);
+  overflow-y: scroll;
+}
+footer {
+  grid-area: footer;
+  background-color: #ffe400;
+  text-align: center;
+  padding-top: 40x;
+  padding: 30px;
+  display: flex; /* Usa flexbox */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+}
+.title-desktop {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font: 1em sans-serif;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 20px;
+}
+.card-img {
+  height: auto;
+  width: 100%;
+}
+.menu-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-desktop {
+  display: none;
+}
+
+.menu-desktop img {
+  width: 40px;
+  height: auto;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+}
+.icons i {
+  padding: 20px;
+  font-size: 20px;
+}
+.paginador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.paginador ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.paginador li {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.paginador li:hover {
+  background-color: #e0e0e0;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 990px) {
+  body {
+    grid-template-areas:
+      "nav nav "
+      "main main"
+      "footer footer";
+    grid-template-columns: auto;
+  }
+  main {
+    height: calc(100vh - 280px);
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  footer {
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  body {
+    grid-template-areas:
+      "menu nav"
+      "menu main"
+      "footer main";
+    grid-template-columns: auto auto;
+  }
+  main {
+    height: calc(100vh - 83px);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px;
+  }
+  footer {
+    padding: 40px;
+  }
+  .menu-mobile {
+    display: none;
+  }
+  .menu-desktop {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  .paginador li {
+    padding: 5px;
+  }
+}
